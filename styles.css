@@ -1,28 +1,31 @@
 * {
 	box-sizing: border-box;
-	background-color: #111;
 }
 
 body {
 	margin: 0;
 	padding: 0;
 	font-family: lato;
+	height: 100dvh;
 	color: #f0ffff;
-	height: 100vh;
-}
-
-.header {
-	height: 100%;
+	overflow: hidden;
+	background: linear-gradient(45deg, #151599, #f0ffff, #000);
 }
 
 /* Estilando el Navbar */
+.header {
+	width: 100%;
+	height: 100vh;
+}
+
 .header__nav-container {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	border: 2px solid #daa520;
+	border: 2px solid #f0ffff;
 	border-radius: 20px;
 	padding: 5px;
+	background-color: #151599;
 }
 
 .header__logo-image {
@@ -57,34 +60,57 @@ body {
 }
 
 .data__container {
+	margin: 30px;
 	display: flex;
 	flex-direction: column;
+	position: relative;
 }
 
 .header__image {
-	width: 400px;
+	width: 25%;
 	margin: auto;
+	animation: mover 3s infinite ease-in-out;
+	background-color: transparent;
 }
 
 .text__container {
-	position: relative;
-	width: 100%;
+	bottom: 50px;
 }
 
 h2,
 p {
-	position: absolute;
-	margin: 30px;
-	padding: 30px;
+	margin: 5px 60px 0px 60px;
+	padding: 0;
 }
 
 h2 {
 	font-size: 40px;
-
-	bottom: 30px;
 }
 
 p {
 	font-size: 20px;
-	bottom: 20px;
+}
+
+.header__button {
+	background-color: #151599;
+	box-shadow: 0 0 10px 3px #f0ffff;
+	color: #f0ffff;
+	width: 200px;
+	height: 50px;
+	margin: 15px 60px;
+	font-size: 25px;
+}
+
+@keyframes mover {
+	0% {
+		transform: translateY(10px);
+	}
+
+	50% {
+		transform: translateY(-10px);
+	}
+
+	100% {
+		transform: translateY(10px);
+	}
 }
